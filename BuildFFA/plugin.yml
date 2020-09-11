@@ -1,0 +1,9 @@
+name: BuildFFA
+author: yurama
+version: 1.0.0
+main: eu.yurama.buildffa.BuildFFA
+
+commands:
+  setspawn:
+  build:
+  inv:
