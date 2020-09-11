@@ -24,6 +24,7 @@ import eu.yurama.buildffa.listener.InventoryListener;
 import eu.yurama.buildffa.listener.JoinListener;
 import eu.yurama.buildffa.listener.PlaceListener;
 import eu.yurama.buildffa.listener.QuitListener;
+import eu.yurama.buildffa.listener.RespawnListener;
 import eu.yurama.buildffa.mysql.MySQL;
 import eu.yurama.buildffa.mysql.MySQLFile;
 
@@ -52,6 +53,7 @@ public class BuildFFA extends JavaPlugin {
 		Bukkit.getPluginManager().registerEvents(new DeathListener(), this);
 		Bukkit.getPluginManager().registerEvents(new PlaceListener(), this);
 		Bukkit.getPluginManager().registerEvents(new DamageListener(), this);
+		Bukkit.getPluginManager().registerEvents(new RespawnListener(), this);
 		Bukkit.getPluginManager().registerEvents(new InteractListener(), this);
 		Bukkit.getPluginManager().registerEvents(new InventoryListener(), this);
 

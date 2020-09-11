@@ -20,11 +20,15 @@ public class BuildCommand implements CommandExecutor {
 
 			if (player.hasPermission("buildffa.build")) {
 				if(BuildFFA.buildMode.contains(player)) {
+					BuildFFA.buildMode.remove(player);
+					
 					player.getInventory().clear();
 					player.setGameMode(GameMode.SURVIVAL);
 					player.teleport(BuildFFA.getCurrentMap().getSpawnLocation());
 					player.sendMessage(Source.PREFIX + "Du hast den Baumodus §cverlassen");
 				} else {
+					BuildFFA.buildMode.add(player);
+					
 					player.getInventory().clear();
 					player.setGameMode(GameMode.CREATIVE);
 					player.sendMessage(Source.PREFIX + "Du hast den Baumodus §abetreten");

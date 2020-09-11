@@ -14,12 +14,15 @@ public class DeathListener implements Listener {
 	public void onPlayerDeathEvent(PlayerDeathEvent event) {
 		Player player = event.getEntity();
 
+		event.setKeepInventory(true);
+		
 		if (player.getKiller() != null) {
 			Player killer = event.getEntity().getKiller();
 
 			BuildFFAPlayer.getBuildFFAPlayer(killer).addKill();
 			BuildFFAPlayer.getBuildFFAPlayer(player).addDeath();
 
+			
 			event.setDeathMessage(
 					Source.PREFIX + "§e" + player.getName() + " §7wurde von §e" + killer.getName() + " §7getötet");
 		} else {
