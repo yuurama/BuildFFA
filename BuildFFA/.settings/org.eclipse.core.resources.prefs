@@ -1,3 +1,4 @@
 eclipse.preferences.version=1
 encoding//src/eu/yurama/buildffa/BuildFFA.java=UTF-8
 encoding//src/eu/yurama/buildffa/builder/ScoreboardBuilder.java=UTF-8
+encoding//src/eu/yurama/buildffa/listener/JoinListener.java=UTF-8

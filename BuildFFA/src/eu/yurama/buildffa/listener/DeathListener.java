@@ -19,17 +19,17 @@ public class DeathListener implements Listener {
 		if (player.getKiller() != null) {
 			Player killer = event.getEntity().getKiller();
 
-			BuildFFAPlayer.getBuildFFAPlayer(killer).addKill();
 			BuildFFAPlayer.getBuildFFAPlayer(player).addDeath();
 
 			
 			event.setDeathMessage(
 					Source.PREFIX + "§e" + player.getName() + " §7wurde von §e" + killer.getName() + " §7getötet");
 		} else {
-			BuildFFAPlayer.getBuildFFAPlayer(player).addDeath();
-
 			event.setDeathMessage(Source.PREFIX + "§e" + player.getName() + " §7ist gestorben");
 		}
+		
+		player.spigot().respawn();
+		BuildFFAPlayer.getBuildFFAPlayer(player).addDeath();
 	}
 
 }

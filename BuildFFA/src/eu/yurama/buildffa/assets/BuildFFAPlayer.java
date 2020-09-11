@@ -36,7 +36,7 @@ public class BuildFFAPlayer {
 
 	public void overwriteStats() {
 		MySQL.update("UPDATE buildffa_stats SET KILLS='" + getKills() + "',DEATHS='" + getDeaths() + "',INVENTORY='"
-				+ getInventorySort().toString() + "' WHERE UUID='" + this.player.toString() + "'");
+				+ getInventorySort().toString() + "' WHERE UUID='" + this.player.getUniqueId().toString() + "'");
 	}
 
 	public void addKill() {
@@ -46,7 +46,7 @@ public class BuildFFAPlayer {
 	}
 
 	public void addDeath() {
-		int data = getKills() + 1;
+		int data = getDeaths() + 1;
 		stats.remove("deaths");
 		stats.put("deaths", data);
 	}
